@@ -1,25 +1,5 @@
-# 10. 추상 팩토리 패턴 - 2
+package main;
 
-## 구현
-
-```java
-//추상화된 텍스트 에어리어 클래스
-public interface TextArea {
-    public String getText();
-}
-
-//추상화된 버튼 클래스
-public interface Button {
-    public void click();
-}
-
-//추상화된 팩토리 클래스
-public interface GuiFactory {
-    Button createButton();
-    TextArea createTextArea();
-}
-
-//GUI 팩토리 구현체 및 버튼과 텍스트 에어리어 구현체 클래스
 public class FactoryInstance {
     public static GuiFactory getGuiFactory() {
       
@@ -50,7 +30,6 @@ public class FactoryInstance {
     }
 }
 
-// GUI 팩토리 구현체
 class LinuxGuiFactory implements GuiFactory {
 
     @Override
@@ -64,7 +43,6 @@ class LinuxGuiFactory implements GuiFactory {
     }
 }
 
-//버튼 구현체
 class LinuxButton implements Button {
 
     @Override
@@ -74,7 +52,6 @@ class LinuxButton implements Button {
 
 }
 
-// 텍스트 에어리어 구현체
 class LinuxTextArea implements TextArea {
 
     @Override
@@ -83,21 +60,3 @@ class LinuxTextArea implements TextArea {
     }
 
 }
-
-
-//메인
-public class Abstract_Factory_Pattern_Main {
-
-    public static void main(String[] args) {
-//       GuiFactory factory = new LinuxGuiFactory();
-        
-       GuiFactory factory = FactoryInstance.getGuiFactory();
-       Button button = factory.createButton();
-       TextArea txArea = factory.createTextArea();
-       
-       button.click();
-       System.out.println(txArea.getText());
-    }
-}
-
-```
