@@ -16,7 +16,7 @@ public class ComputerBuilder {
     }
     public static ComputerBuilder startWithCpu(String cpu) {
         ComputerBuilder builder = new ComputerBuilder();
-        builder.setCpu("cpu");
+        builder.setCpu(cpu);
         return builder;
     }
     
