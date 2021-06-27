@@ -23,7 +23,7 @@ public abstract class AbstractGameConnectHelper {
     /**
      * 일정한 프로세스 실행하는 메소드
      */
-    public String requestConnection(String encodedInfo) {
+    public final String requestConnection(String encodedInfo) {
         String[] decodedInfo = doSecurity(encodedInfo);
         String id = decodedInfo[0];
         String password = decodedInfo[1];
