@@ -39,7 +39,7 @@ public class SystemSpeaker {
 ## 2. 더블 체크 락킹 싱글톤 패턴
 
 1번의 약점을 개선하여 첫 부분에서 객체를 만들어야 하는지를 먼저 확인하고 객체를 만들어야 할때만 락을 얻어야 하도록  
-할 수있다. ** 중요한 점은 하나의 인스턴스를 참조하는 변수는 volatile로 선언되어야 한다**  
+할 수있다. **중요한 점은 하나의 인스턴스를 참조하는 변수는 volatile로 선언되어야 한다**  
 이렇게 함으로서 캐쉬 불일치 문제를 해결할 수 있다.
 ```java
 public class DoubleCheckedLockingSingleton {
